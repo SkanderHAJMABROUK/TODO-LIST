@@ -1,0 +1,16 @@
+<div class="container"><h1>My {{title}}</h1>
+  <nav >
+      <button [routerLink]="['']" class="btn btn-dark">
+          Todos
+      </button>
+      <button  (click)="_service.todoAddShowModal=true" class="btn btn-dark">
+          New
+      </button>
+      <button *ngIf="!_user.isAuthenticated" [routerLink]="['signin']" class="btn btn-dark">
+          Sign in
+      </button>
+      <button *ngIf="_user.isAuthenticated" (click)="signOut()" class="btn btn-dark">
+          Sign out
+      </button>
+      
+  </nav></div>

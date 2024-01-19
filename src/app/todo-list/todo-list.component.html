@@ -1,0 +1,23 @@
+<div class="container">
+    <app-todo-detail *ngIf="todoService.todoDetailShowModal" [todo]="selectedTodo"></app-todo-detail>
+    <app-todo-update *ngIf="todoService.todoUpdateShowModal" [todo]="selectedTodo"></app-todo-update>
+    <app-todo-template-driven-form *ngIf="todoService.todoAddShowModal"></app-todo-template-driven-form>
+  
+    <div class="search-container">
+      <label for="searchInput">Search Todo:</label>
+      <input type="text" id="searchInput" [(ngModel)]="searchTerm" (input)="searchTodo()" placeholder="Enter todo name">
+    </div>
+  
+    <div [ngClass]="todo | todoPipe" *ngFor="let todo of filteredTodoList" appTodo>
+      <!-- ngClass avec le pipe applique dynamiquement les classes CSS générées par le TodoPipe -->
+      <!-- apptodo applique la directive -->
+  
+      {{ todo.title }}
+      <div>
+        <i><fa-icon [icon]="faList" class="on-icon" (click)="showTodoDetail(todo)"></fa-icon></i>
+        <i><fa-icon [icon]="faPenToSquare" class="on-icon" (click)="showTodoUpdate(todo)"></fa-icon></i>
+        <i><fa-icon [icon]="faTrash" class="on-icon" (click)="deleteTodo(todo)"></fa-icon></i>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,39 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "title": "IT 2007",
+      "date": "2023-12-24",
+      "description": "Send an e-mail to update the IT team",
+      "done": true
+    },
+    {
+      "id": 2,
+      "title": "Designers",
+      "date": "2023-12-14",
+      "description": "Call the design agency to finalize the models",
+      "done": false
+    },
+    {
+      "id": 3,
+      "title": "Recruiter",
+      "date": "2023-12-16",
+      "description": "Contact recruiters about the new position to be filled",
+      "done": true
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "login": "mail@gmail.com",
+      "password": "bingo",
+      "token": "ffo33dde"
+    },
+    {
+      "id": 2,
+      "login": "0000",
+      "password": "0000",
+      "token": "ZE007"
+    }
+  ]
+}

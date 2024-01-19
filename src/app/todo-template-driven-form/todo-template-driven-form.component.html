@@ -1,0 +1,46 @@
+<div class="dialog">
+    <div class="header">
+        <h3>New task</h3>
+        <button class="btn btn-close" (click)="todoService.todoAddShowModal=false"></button>
+    </div>
+    <hr>
+    <form #todoForm="ngForm" name="f" (ngSubmit)="todoForm.form.valid && addTodo()"
+        novalidate>
+        <label for="title">Title</label>
+        <input type="text" id="title" [(ngModel)]="todo.title" name="title"
+        placeholder="Your task title"
+        required
+        #title="ngModel"
+        class="form-control"
+        [ngClass]="{'is-invalid':todoForm.submitted && title.errors}"/><br />
+        <div *ngIf="todoForm.submitted && title.errors" class="invalid-feedback">
+            <div *ngIf="title.errors['required']">Title is required</div>
+        </div>
+
+        <label for="date">Date</label>
+        <input type="date" id="date" [(ngModel)]="todo.date" name="date" required
+        oninput="new Date(this.value)>new Date()||alert('Please try an other date')">
+
+        <label for="description">Description</label>
+        <textarea id="description" [(ngModel)]="todo.description" name="description"
+        required
+        #description="ngModel"
+        class="form-control"
+        [ngClass]="{'is-invalid':todoForm.submitted&&description.errors}"
+        placeholder="Your task description">
+        </textarea>
+        <div *ngIf="todoForm.submitted&&description.errors" class="invalid-feedback">
+            <div *ngIf="description.errors['required']">
+                Task description is required
+            </div>
+        </div>
+
+        <div class="add">
+            <button type="submit" class="btn btn-dark" [ngStyle]="{'width':'300px'}"
+            [disabled] = "todoForm.invalid">
+                Add
+            </button>
+        </div>
+    </form>
+   
+</div>

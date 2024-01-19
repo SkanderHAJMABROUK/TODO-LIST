@@ -1,0 +1,19 @@
+<div class="dialog">
+    <div class="header">
+        <h3>Task details</h3>
+        <button class="btn btn-close" (click)="todoService.todoDetailShowModal=false"></button>
+    </div>
+    <hr />
+    <div>
+        <p>
+            {{todo.title}} <span [ngStyle]="{'font-weight':'bold'}">Done</span>
+        <i><fa-icon [icon]="faCheck" [ngClass]="todo.done?'done':'not-done'" (click)="updateDoneTodo(todo)"></fa-icon></i>
+        </p>
+        <p>
+            {{ todo.date | date:'FullDate'}}
+        </p>
+        <p>
+            {{todo.description}}
+        </p>
+    </div>
+</div>

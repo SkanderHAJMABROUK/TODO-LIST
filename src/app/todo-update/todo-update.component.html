@@ -1,0 +1,38 @@
+<div class="dialog">
+
+    <div class="header">
+        <h3>Update Task</h3>
+        <button class="btn btn-close" (click)="todoService.todoUpdateShowModal=false"></button>
+    </div>
+<hr>
+<div>
+    <form #todoForm="ngForm" (ngSubmit)="updateTodo()">
+
+        <!-- (ngSubmit) mettre la modification si on clique sur submit du formulaire  -->
+
+        <label for="title">Title</label>
+        <input type="text" name="title"
+        
+        [(ngModel)]="todo.title"
+        value="{{todo.title}}"><br>
+        <!--  ng model faire le binding entre html et ts et vise versa : ([ veut dire liaison dans 2 sens])-->
+
+        <label for="date">Date</label>
+        <input type="date" name="date"
+        [(ngModel)]="todo.date"
+        value="{{todo.date}}"><br>
+
+        <label for="desc">Description</label>
+        <textarea name="description"
+        [(ngModel)]="todo.description"
+        value="{{todo.description}}"
+        >
+        </textarea><br>
+
+
+        <button type="submit" class="btn btn-dark"
+        [ngStyle]="{'widht':'300px'}">Update
+        </button>
+    </form>
+</div>
+</div>

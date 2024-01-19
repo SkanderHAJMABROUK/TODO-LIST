@@ -1,0 +1,40 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width:100%
+}
+
+.form{
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 50px 20px;
+    position: relative;
+    top: 100px
+}
+
+label{
+    color: rgb(37, 52, 214);
+    font-weight: bold;
+    width: 100px;
+    display: inline-block;
+}
+input{
+    background: none;
+    border: 2px solid rgb(0, 0, 0);
+    padding: 5px;
+    border-radius: 5px;
+    width: 300px;
+    padding:5px;
+    margin: 5px
+}
+
+.login{
+    justify-content: center;
+    width: 500px;
+    display: flex;}
+
+button{
+    width: 100px;
+}

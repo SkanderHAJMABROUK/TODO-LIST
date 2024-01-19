@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="form">
+        <form [formGroup]="authForm" (ngSubmit)="checkLogin()">
+            <label for="">Login</label>
+            <input type="text" formControlName="login" required/><br>
+            <!-- formcontrolname lie le champ dans html avec celui dans le fichier ts -->
+            <label for="">Password</label>
+            <input type="password" formControlName="password" /><br>
+            <div class="login">
+                <button class="btn btn-dark" type="submit">Login</button>
+            </div>
+        </form>
+    </div>
+</div>
